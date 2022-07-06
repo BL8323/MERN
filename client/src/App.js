@@ -8,9 +8,9 @@ import useStyles from "./styles";
 import memories from "./images/memories.png";
 
 const App = () => {
-  const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
   const classes = useStyles();
+  const [currentId, setCurrentId] = useState(null);
 
   useEffect(() => {
     dispatch(getPosts());
@@ -28,6 +28,7 @@ const App = () => {
         <Container>
           <Grid
             container
+            className={classes.mainContainer}
             justify="space-between"
             alignItems="stretch"
             spacing={3}
